@@ -7,6 +7,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Node
 ENV NODE_VERSION=20
 ENV NVM_DIR=/usr/share/nvm
+# Prefer ipv4 in DNS or yarn/corepack will fail during build.
+ENV NODE_OPTIONS=--dns-result-order=ipv4first
 
 # Go
 ENV GODEBUG="netdns=go"
